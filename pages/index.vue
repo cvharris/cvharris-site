@@ -23,6 +23,18 @@
   </div>
 </template>
 
+<script>
+export default {
+  head() {
+    return {
+      script: [
+        { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }
+      ]
+    }
+  }
+}
+</script>
+
 <style>
 /* Sample `apply` at-rules with Tailwind CSS
 .container {

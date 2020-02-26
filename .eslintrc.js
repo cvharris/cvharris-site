@@ -19,5 +19,13 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
+    'prettier/prettier': 'warn',
+    'vue/max-attributes-per-line': 'off',
+    'vue/html-self-closing': 'off',
+    'vue/html-indent': 'off',
+    'vue/html-closing-bracket-newline': 'off',
+    'vue/singleline-html-element-content-newline': 'off',
+    'nuxt/no-cjs-in-config': 'off',
+    'no-console': 'off'
   }
 }

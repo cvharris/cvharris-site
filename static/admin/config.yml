@@ -6,16 +6,36 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: 'blog'
-    label: 'Blog'
+  - name: 'pages'
+    label: 'Pages'
     format: 'json'
-    folder: 'assets/content/blog'
-    create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    folder: 'assets/content/pages'
+    create: false
+    slug: '{{slug}}'
     editor:
       preview: false
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - name: 'jobs'
+        label: 'Jobs'
+        widget: 'object'
+        fields:
+          - { label: 'Company', name: 'company', widget: 'string' }
+          - { label: 'Start Date', name: 'date', widget: 'datetime', timeFormat: false }
+          - { label: 'End Date', name: 'date', widget: 'datetime', timeFormat: false }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Description', name: 'description', widget: 'markdown' }
+      - name: 'projects'
+        label: 'Projects'
+        widget: 'object'
+        fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'URL', name: 'url', widget: 'string' }
+          - { label: 'Description', name: 'description', widget: 'markdown' }
+      - name: 'certs'
+        label: 'Certifications'
+        widget: 'object'
+        fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'URL', name: 'url', widget: 'string' }
+          - { label: 'Description', name: 'description', widget: 'markdown' }
+  

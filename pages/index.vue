@@ -2,7 +2,7 @@
   <div class="container">
     <div>
       <h1 class="title">
-        cvharris-site
+        {{ title }}
       </h1>
       <h2 class="subtitle">
         My personal resume and website
@@ -25,6 +25,13 @@
 
 <script>
 export default {
+  async asyncData() {
+    // `attributes` is the object of YML Frontmatter data
+    // `html` is the HTML version of the markdown body
+    const { attributes } = await import('~/assets/content/pages/home-page.md')
+    const { title, jobs, projects, certs } = attributes
+    return { title, jobs, projects, certs }
+  },
   head() {
     return {
       script: [
